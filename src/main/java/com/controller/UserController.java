@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.SysMenu;
 import com.entity.User;
@@ -29,6 +31,7 @@ import com.service.UserService;
 import com.util.CaptchaUtil;
 import com.util.DateUtil;
 
+
 /**
  * <ul>
  * <li>系统用户 Controller</li>
@@ -39,7 +42,6 @@ import com.util.DateUtil;
  * <li>DELETE /user/id 删除用户</li>
  * <ul>
  */
-@RequestMapping("/")
 @Controller
 public class UserController {
 	
@@ -54,18 +56,19 @@ public class UserController {
 	 * 系统首页
 	 * @return
 	 */
-	@RequestMapping("/toindex")
+	@RequestMapping("/")
 	public String toMain(){
+		logger.info("main...");
+		System.out.println("mian");
 		return "layout/main";
 	}
-
 	/**
 	 * 用户管理页面
 	 * @return
 	 */
 	@RequestMapping("/toUser")
 	public String toUser(){
-		return "sys/sysUser";
+		return "layout/head";
 	}
 	
 	/**

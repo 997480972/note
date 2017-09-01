@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Note</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="top">
+		<iframe align="center" width="100%" height="" src="head.html"
+			frameborder="no" border="1" marginwidth="0" marginheight="0"
+			scrolling="no"></iframe>
+	</div>
+	<div id="content" style="magin:50px;">
+		<#include "head.html">  
+	</div>
+	<div id="footer" style="magin:50px;" class="navbar-fixed-bottom">
+	</div>
+</body>
+</html>
+<script>
+	$(document).ready(function(){
+	   $(".footer").load("head.html");
+	});
+</script>
